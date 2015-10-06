@@ -3,6 +3,7 @@ import {Contact} from './models/contact';
 import {ContactsService} from './common/contacts-service';
 import {ContactsListStateComponent} from './components/contacts-list-state/contacts-list-state-component';
 import {ContactDetailStateComponent} from './components/contact-detail-state/contact-detail-state-component';
+import {ContactEditorStateComponent} from './components/contact-editor-state/contact-editor-state-component';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
@@ -22,6 +23,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 @RouteConfig([
   { path: '/', component: ContactsListStateComponent },
   { path: '/contact/:id', component: ContactDetailStateComponent },
+  { path: '/contact/:id/edit', component: ContactEditorStateComponent }
 ])
 class ContactsApp {
 }

@@ -8,9 +8,13 @@ import {Contact} from '../../models/contact';
 export class ContactDetailComponent {
   @Input() contact: Contact;
   @Output() backClicked = new EventEmitter();
+  @Output() editClicked = new EventEmitter();
 
   goBack () {
     this.backClicked.next(null);
   }
 
+  edit (contact) {
+    this.editClicked.next(contact);
+  }
 }
