@@ -11,7 +11,8 @@ import {RouteParams, Router} from 'angular2/router';
   template: `
     <contact-detail-component
       [contact]="contact"
-      (back-clicked)="onBackClicked()">
+      (back-clicked)="onBackClicked()"
+      (edit-clicked)="onEditClicked($event)">
     </contact-detail-component>`,
   directives: [CORE_DIRECTIVES, ContactDetailComponent]
 })
@@ -25,5 +26,9 @@ export class ContactDetailStateComponent {
 
   onBackClicked () {
     this.router.navigate('/');
+  }
+
+  onEditClicked (contact) {
+    this.router.navigate('/contact/' + contact.id + '/edit');
   }
 }

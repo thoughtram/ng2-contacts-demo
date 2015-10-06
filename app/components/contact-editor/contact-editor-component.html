@@ -1,0 +1,36 @@
+<div class="row">
+  <form class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="contact.image">
+        <span class="card-title">{{contact.firstname}} {{contact.lastname}}</span>
+      </div>
+      <div class="card-content grey-text text-darken-4">
+        <div class="row">
+          <div class="input-field col s6">
+            <input [(ng-model)]="contact.firstname" id="first_name" type="text" class="validate">
+            <label class="active" for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input [(ng-model)]="contact.lastname" id="last_name" type="text" class="validate">
+            <label class="active" for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input [(ng-model)]="contact.zip" id="zip" type="text" class="validate">
+            <label class="active" for="zip">Zipcode</label>
+          </div>
+          <div class="input-field col s6">
+            <input [(ng-model)]="contact.city" id="city" type="text" class="validate">
+            <label class="active" for="city">City</label>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <button class="btn" (click)="cancel(contact)">Cancel</button>
+        <button class="btn" (click)="save(contact)">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -4,7 +4,7 @@ import {Contact} from '../../models/contact';
 @Component({
   selector: 'contact-detail-component',
   properties: ['contact'],
-  events: ['backClicked']
+  events: ['backClicked', 'editClicked']
 })
 @View({
   templateUrl: './components/contact-detail/contact-detail-component.html',
@@ -13,9 +13,13 @@ import {Contact} from '../../models/contact';
 export class ContactDetailComponent {
   contact: Contact;
   backClicked = new EventEmitter();
+  editClicked = new EventEmitter();
 
   goBack () {
     this.backClicked.next(null);
   }
 
+  edit (contact) {
+    this.editClicked.next(contact);
+  }
 }

@@ -17,6 +17,8 @@
         "./app/common/contacts-service.ts",
         "./app/components/contact-detail-state/contact-detail-state-component.ts",
         "./app/components/contact-detail/contact-detail-component.ts",
+        "./app/components/contact-editor-state/contact-editor-state-component.ts",
+        "./app/components/contact-editor/contact-editor-component.ts",
         "./app/components/contacts-list-state/contacts-list-state-component.ts",
         "./app/components/contacts-list/contacts-list-component.ts",
         "./app/contacts-app.ts",
