@@ -1,20 +1,21 @@
-import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
-import {RouteParams} from 'angular2/router';
+import {Component, EventEmitter, View, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Contact} from '../../models/contact';
-import {ContactsService} from '../../common/contacts-service';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
-
 
 @Component({
-  selector: 'contact-detail-component'
+  selector: 'contact-detail-component',
+  properties: ['contact'],
+  events: ['backClicked']
 })
 @View({
   templateUrl: './components/contact-detail/contact-detail-component.html',
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+  directives: [CORE_DIRECTIVES]
 })
 export class ContactDetailComponent {
   contact: Contact;
-  constructor (contactsService: ContactsService, routeParams: RouteParams) {
-    this.contact = contactsService.getContact(routeParams.get('id'));
+  backClicked = new EventEmitter();
+
+  goBack () {
+    this.backClicked.next(null);
   }
+
 }
