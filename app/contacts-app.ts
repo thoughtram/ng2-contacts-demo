@@ -10,10 +10,11 @@ import {Component, bootstrap} from 'angular2/angular2';
         </div>
       </nav>
     </div>
-    Hello World
+    Hello {{name}}
     `
 })
 class ContactsApp {
+  name = 'World';
 }
 
 bootstrap(ContactsApp);
