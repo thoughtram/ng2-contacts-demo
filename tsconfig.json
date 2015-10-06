@@ -1,0 +1,31 @@
+{
+    "version": "1.6.0",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true
+    },
+    "files": [
+        "./app/common/clone-service.ts",
+        "./app/common/contact-data.ts",
+        "./app/contacts-app.ts",
+        "./app/init.ts",
+        "./app/models/contact.ts",
+        "./app/typings/_custom.d.ts",
+        "./app/typings/ng2_test.d.ts",
+        "./tsd_typings/jasmine/jasmine.d.ts",
+        "./tsd_typings/systemjs/systemjs.d.ts",
+        "./tsd_typings/tsd.d.ts"
+    ],
+    "filesGlob": [
+        "./app/**/*.ts",
+        "./tsd_typings/**/*.d.ts"
+    ],
+    "compileOnSave": false
+}
