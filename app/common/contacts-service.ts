@@ -7,4 +7,8 @@ export class ContactsService {
   getContacts () {
     return this.contacts;
   }
+
+  getContact (id) {
+    return this.contacts.find((contact) => contact.id == id);
+  }
 }
