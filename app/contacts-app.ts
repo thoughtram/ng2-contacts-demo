@@ -1,6 +1,8 @@
 import {Component, bootstrap} from 'angular2/angular2';
 import {Contact} from './models/contact';
 import {ContactsService} from './common/contacts-service';
+import {ContactsListComponent} from './components/contacts-list/contacts-list-component';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
   selector: 'contacts-app',
@@ -12,23 +14,14 @@ import {ContactsService} from './common/contacts-service';
         </div>
       </nav>
     </div>
-    <ul>
-      <li *ng-for="#contact of contacts" style="margin-bottom: 10px;">
-        <span>Firstname:</span>
-        <span>{{contact.firstname}}</span>
-        </br>
-        <span>Lastname:</span>
-        <span>{{contact.lastname}}</span>
-      </li>
-    </ul>
-    `
+    <router-outlet></router-outlet>
+    `,
+  directives: [ROUTER_DIRECTIVES]
 })
+@RouteConfig([
+  { path: '/', component: ContactsListComponent }
+])
 class ContactsApp {
-  contacts: Array<Contact>;
-
-  constructor (contactsService: ContactsService) {
-    this.contacts = contactsService.getContacts();
-  }
 }
 
-bootstrap(ContactsApp, [ContactsService]);
+bootstrap(ContactsApp, [ContactsService, ROUTER_PROVIDERS]);
