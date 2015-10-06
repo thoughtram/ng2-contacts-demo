@@ -1,9 +1,9 @@
 <ul class="collection">
   <li class="collection-item avatar"
-      *ng-for="#contact of contacts">
-      <a [router-link]="['/ContactDetail', {id: contact.id}]">
-        <img [src]="contact.image" alt="" class="circle">
-        <span class="title">{{contact.firstname}} {{contact.lastname}}</span>
-      </a>
+    (click)="onContactClicked(contact)"
+    *ng-for="#contact of contacts">
+
+    <img [src]="contact.image" alt="" class="circle">
+    <span class="title">{{contact.firstname}} {{contact.lastname}}</span>
   </li>
 </ul>
