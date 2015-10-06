@@ -1,4 +1,5 @@
 import {Component, bootstrap} from 'angular2/angular2';
+import {Contact} from './models/contact';
 
 @Component({
   selector: 'contacts-app',
@@ -10,11 +11,23 @@ import {Component, bootstrap} from 'angular2/angular2';
         </div>
       </nav>
     </div>
-    Hello {{name}}
+    <span>Firstname:</span>
+    <span>{{contact.firstname}}</span>
+    </br>
+    <span>Lastname:</span>
+    <span>{{contact.lastname}}</span>
     `
 })
 class ContactsApp {
-  name = 'World';
+  contact: Contact = {
+    id: 7,
+    firstname: 'Diana',
+    lastname: 'Ellis',
+    street: '6554 park lane',
+    zip: '43378',
+    city: 'Rush',
+    image: 'images/7.jpg'
+  };
 }
 
 bootstrap(ContactsApp);
