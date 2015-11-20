@@ -4,7 +4,7 @@ import {ContactsService} from './common/contacts-service';
 import {ContactsListStateComponent} from './components/contacts-list-state/contacts-list-state-component';
 import {ContactDetailStateComponent} from './components/contact-detail-state/contact-detail-state-component';
 import {ContactEditorStateComponent} from './components/contact-editor-state/contact-editor-state-component';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 @Component({
   selector: 'contacts-app',
@@ -31,4 +31,4 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 class ContactsApp {
 }
 
-bootstrap(ContactsApp, [ContactsService, ROUTER_BINDINGS]);
+bootstrap(ContactsApp, [ContactsService, ROUTER_PROVIDERS]);

@@ -24,6 +24,6 @@ export class ContactsListStateComponent {
   }
 
   onContactClicked (contact) {
-    this.router.navigate('/contact/' + contact.id);
+    this.router.navigateByUrl('/contact/' + contact.id);
   }
 }

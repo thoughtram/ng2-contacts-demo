@@ -4,9 +4,9 @@ import {Contact} from '../../models/contact';
 
 @Component({
   selector: 'contact-editor-component',
-  properties: ['contact'],
-  events: ['canceled', 'saved'],
-  bindings: [CloneService]
+  inputs: ['contact'],
+  outputs: ['canceled', 'saved'],
+  providers: [CloneService]
 })
 @View({
   templateUrl: './components/contact-editor/contact-editor-component.html',

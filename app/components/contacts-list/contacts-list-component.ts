@@ -3,8 +3,8 @@ import {Contact} from '../../models/contact';
 
 @Component({
   selector: 'contacts-list-component',
-  events: ['contactClicked'],
-  properties: ['contacts']
+  outputs: ['contactClicked'],
+  inputs: ['contacts']
 })
 @View({
   templateUrl: './components/contacts-list/contacts-list-component.html',

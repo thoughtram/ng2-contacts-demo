@@ -11,7 +11,7 @@ import {Router, RouteParams} from 'angular2/router';
   template: `
     <contact-editor-component
       [contact]="contact"
-      (canceled)="onCanceled($event)""
+      (canceled)="onCanceled($event)"
       (saved)="onSaved($event)">
     </contact-editor-component>`,
   directives: [CORE_DIRECTIVES, ContactEditorComponent]
@@ -34,6 +34,6 @@ export class ContactEditorStateComponent {
   }
 
   private goToDetails (contact) {
-    this.router.navigate('/contact/' + contact.id);
+    this.router.navigateByUrl('/contact/' + contact.id);
   }
 }
